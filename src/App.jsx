@@ -52,20 +52,6 @@ function Calculateur() {
 
   return (
     <div style={{ fontFamily: "'DM Sans', 'Segoe UI', sans-serif", background: "#f0f4ff", minHeight: "100vh" }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        .fd  { animation: fd .3s ease; }
-        @keyframes fd { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
-        .bp  { background:#4f46e5; color:white; border:none; padding:11px 26px; border-radius:10px; font-size:14px; font-weight:700; cursor:pointer; transition:all .2s; font-family:inherit; }
-        .bp:hover    { background:#4338ca; transform:translateY(-1px); box-shadow:0 4px 12px rgba(79,70,229,.4); }
-        .bp:disabled { opacity:.35; cursor:default; transform:none; box-shadow:none; }
-        .bo  { background:white; color:#4f46e5; border:2px solid #4f46e5; padding:9px 20px; border-radius:10px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; }
-        .bo:hover { background:#eef2ff; }
-        .inp { width:100%; padding:8px 12px; border:2px solid #e2e8f0; border-radius:9px; font-size:14px; font-family:inherit; }
-        .inp:focus { outline:none; border-color:#4f46e5; }
-        .alerte { background:#fffbeb; border:1px solid #fcd34d; border-radius:8px; padding:9px 12px; margin-bottom:6px; font-size:12px; color:#78350f; line-height:1.5; }
-      `}</style>
 
       {/* HEADER */}
       <div style={{ background: "linear-gradient(135deg,#4f46e5,#7c3aed)", padding: "22px 16px 34px", color: "white" }}>
@@ -254,17 +240,17 @@ function Calculateur() {
                     ) : (
                       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                         {deplacementDomicile && (
-                          <AperçuChip color="#059669" code="PERFADOM 6 × 1" desc="Semaine 1 — installation + suivi (50,00 €)" />
+                          <ApercuChip color="#059669" code="PERFADOM 6 × 1" desc="Semaine 1 — installation + suivi (50,00 €)" />
                         )}
                         {ga.semSuiv > 0 && ga.fHebdo && (
-                          <AperçuChip
+                          <ApercuChip
                             color="#059669"
                             code={`${ga.fHebdo.code} × ${ga.semSuiv}`}
                             desc={`Semaine${ga.semSuiv > 1 ? "s" : ""} 2${ga.semSuiv > 1 ? `–${ga.semComp}` : ""} — consomm. hebdo (${TARIFS[ga.fHebdo.code]?.toFixed(2)} € × ${ga.semSuiv} = ${(TARIFS[ga.fHebdo.code] * ga.semSuiv).toFixed(2)} €)`}
                           />
                         )}
                         {ga.joursR > 0 && (
-                          <AperçuChip
+                          <ApercuChip
                             color="#d97706"
                             code={`PERFADOM 17 × ${ga.f17qty}`}
                             desc={`${ga.joursR} jour(s) résiduel(s) × ${nbPerfParJour} perf/j (${(11.8 * ga.f17qty).toFixed(2)} €)`}
@@ -476,7 +462,7 @@ function Calculateur() {
 }
 
 // ─── Petit composant aperçu ───────────────────────────────────────────────────
-function AperçuChip({ color, code, desc }) {
+function ApercuChip({ color, code, desc }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
       <span style={{ background: color, color: "white", borderRadius: 5, padding: "2px 9px", fontSize: 11, fontWeight: 700, flexShrink: 0 }}>

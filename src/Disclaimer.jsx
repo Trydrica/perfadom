@@ -11,10 +11,6 @@ export function Disclaimer({ onAccept }) {
       padding: "24px 16px",
       fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
     }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap');
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-      `}</style>
 
       <div style={{ maxWidth: 560, width: "100%" }}>
 
