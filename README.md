@@ -39,4 +39,3 @@ src/
 - OMéDIT Normandie v3 · OMéDIT IDF nov. 2024
 
 > ⚠ Outil d'aide uniquement. Vérifier avec la LPP et la circulaire en vigueur.
-# perfadom
